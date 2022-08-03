@@ -20,18 +20,21 @@ mixin _$CountersEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() increment,
     required TResult Function() decrement,
+    required TResult Function() loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? increment,
     TResult Function()? decrement,
+    TResult Function()? loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? increment,
     TResult Function()? decrement,
+    TResult Function()? loading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$CountersEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_IncrementEvent value) increment,
     required TResult Function(_DecrementEvent value) decrement,
+    required TResult Function(_LoadingEvent value) loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_IncrementEvent value)? increment,
     TResult Function(_DecrementEvent value)? decrement,
+    TResult Function(_LoadingEvent value)? loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_IncrementEvent value)? increment,
     TResult Function(_DecrementEvent value)? decrement,
+    TResult Function(_LoadingEvent value)? loading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -116,6 +122,7 @@ class _$_IncrementEvent implements _IncrementEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() increment,
     required TResult Function() decrement,
+    required TResult Function() loading,
   }) {
     return increment();
   }
@@ -125,6 +132,7 @@ class _$_IncrementEvent implements _IncrementEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? increment,
     TResult Function()? decrement,
+    TResult Function()? loading,
   }) {
     return increment?.call();
   }
@@ -134,6 +142,7 @@ class _$_IncrementEvent implements _IncrementEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? increment,
     TResult Function()? decrement,
+    TResult Function()? loading,
     required TResult orElse(),
   }) {
     if (increment != null) {
@@ -147,6 +156,7 @@ class _$_IncrementEvent implements _IncrementEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_IncrementEvent value) increment,
     required TResult Function(_DecrementEvent value) decrement,
+    required TResult Function(_LoadingEvent value) loading,
   }) {
     return increment(this);
   }
@@ -156,6 +166,7 @@ class _$_IncrementEvent implements _IncrementEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_IncrementEvent value)? increment,
     TResult Function(_DecrementEvent value)? decrement,
+    TResult Function(_LoadingEvent value)? loading,
   }) {
     return increment?.call(this);
   }
@@ -165,6 +176,7 @@ class _$_IncrementEvent implements _IncrementEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_IncrementEvent value)? increment,
     TResult Function(_DecrementEvent value)? decrement,
+    TResult Function(_LoadingEvent value)? loading,
     required TResult orElse(),
   }) {
     if (increment != null) {
@@ -221,6 +233,7 @@ class _$_DecrementEvent implements _DecrementEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() increment,
     required TResult Function() decrement,
+    required TResult Function() loading,
   }) {
     return decrement();
   }
@@ -230,6 +243,7 @@ class _$_DecrementEvent implements _DecrementEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? increment,
     TResult Function()? decrement,
+    TResult Function()? loading,
   }) {
     return decrement?.call();
   }
@@ -239,6 +253,7 @@ class _$_DecrementEvent implements _DecrementEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? increment,
     TResult Function()? decrement,
+    TResult Function()? loading,
     required TResult orElse(),
   }) {
     if (decrement != null) {
@@ -252,6 +267,7 @@ class _$_DecrementEvent implements _DecrementEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_IncrementEvent value) increment,
     required TResult Function(_DecrementEvent value) decrement,
+    required TResult Function(_LoadingEvent value) loading,
   }) {
     return decrement(this);
   }
@@ -261,6 +277,7 @@ class _$_DecrementEvent implements _DecrementEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_IncrementEvent value)? increment,
     TResult Function(_DecrementEvent value)? decrement,
+    TResult Function(_LoadingEvent value)? loading,
   }) {
     return decrement?.call(this);
   }
@@ -270,6 +287,7 @@ class _$_DecrementEvent implements _DecrementEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_IncrementEvent value)? increment,
     TResult Function(_DecrementEvent value)? decrement,
+    TResult Function(_LoadingEvent value)? loading,
     required TResult orElse(),
   }) {
     if (decrement != null) {
@@ -284,6 +302,117 @@ abstract class _DecrementEvent implements CountersEvent {
 }
 
 /// @nodoc
+abstract class _$$_LoadingEventCopyWith<$Res> {
+  factory _$$_LoadingEventCopyWith(
+          _$_LoadingEvent value, $Res Function(_$_LoadingEvent) then) =
+      __$$_LoadingEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_LoadingEventCopyWithImpl<$Res>
+    extends _$CountersEventCopyWithImpl<$Res>
+    implements _$$_LoadingEventCopyWith<$Res> {
+  __$$_LoadingEventCopyWithImpl(
+      _$_LoadingEvent _value, $Res Function(_$_LoadingEvent) _then)
+      : super(_value, (v) => _then(v as _$_LoadingEvent));
+
+  @override
+  _$_LoadingEvent get _value => super._value as _$_LoadingEvent;
+}
+
+/// @nodoc
+
+class _$_LoadingEvent implements _LoadingEvent {
+  const _$_LoadingEvent();
+
+  @override
+  String toString() {
+    return 'CountersEvent.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_LoadingEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() increment,
+    required TResult Function() decrement,
+    required TResult Function() loading,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? increment,
+    TResult Function()? decrement,
+    TResult Function()? loading,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? increment,
+    TResult Function()? decrement,
+    TResult Function()? loading,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_IncrementEvent value) increment,
+    required TResult Function(_DecrementEvent value) decrement,
+    required TResult Function(_LoadingEvent value) loading,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_IncrementEvent value)? increment,
+    TResult Function(_DecrementEvent value)? decrement,
+    TResult Function(_LoadingEvent value)? loading,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_IncrementEvent value)? increment,
+    TResult Function(_DecrementEvent value)? decrement,
+    TResult Function(_LoadingEvent value)? loading,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingEvent implements CountersEvent {
+  const factory _LoadingEvent() = _$_LoadingEvent;
+}
+
+/// @nodoc
 mixin _$CountersState {
   int get count => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -291,6 +420,7 @@ mixin _$CountersState {
     required TResult Function(int count) initial,
     required TResult Function(int count) increment,
     required TResult Function(int count) decrement,
+    required TResult Function(int count) loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -298,6 +428,7 @@ mixin _$CountersState {
     TResult Function(int count)? initial,
     TResult Function(int count)? increment,
     TResult Function(int count)? decrement,
+    TResult Function(int count)? loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -305,6 +436,7 @@ mixin _$CountersState {
     TResult Function(int count)? initial,
     TResult Function(int count)? increment,
     TResult Function(int count)? decrement,
+    TResult Function(int count)? loading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -313,6 +445,7 @@ mixin _$CountersState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_IncrementState value) increment,
     required TResult Function(_DecrementState value) decrement,
+    required TResult Function(_LoadingState value) loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -320,6 +453,7 @@ mixin _$CountersState {
     TResult Function(_Initial value)? initial,
     TResult Function(_IncrementState value)? increment,
     TResult Function(_DecrementState value)? decrement,
+    TResult Function(_LoadingState value)? loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -327,6 +461,7 @@ mixin _$CountersState {
     TResult Function(_Initial value)? initial,
     TResult Function(_IncrementState value)? increment,
     TResult Function(_DecrementState value)? decrement,
+    TResult Function(_LoadingState value)? loading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -434,6 +569,7 @@ class _$_Initial implements _Initial {
     required TResult Function(int count) initial,
     required TResult Function(int count) increment,
     required TResult Function(int count) decrement,
+    required TResult Function(int count) loading,
   }) {
     return initial(count);
   }
@@ -444,6 +580,7 @@ class _$_Initial implements _Initial {
     TResult Function(int count)? initial,
     TResult Function(int count)? increment,
     TResult Function(int count)? decrement,
+    TResult Function(int count)? loading,
   }) {
     return initial?.call(count);
   }
@@ -454,6 +591,7 @@ class _$_Initial implements _Initial {
     TResult Function(int count)? initial,
     TResult Function(int count)? increment,
     TResult Function(int count)? decrement,
+    TResult Function(int count)? loading,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -468,6 +606,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_IncrementState value) increment,
     required TResult Function(_DecrementState value) decrement,
+    required TResult Function(_LoadingState value) loading,
   }) {
     return initial(this);
   }
@@ -478,6 +617,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_IncrementState value)? increment,
     TResult Function(_DecrementState value)? decrement,
+    TResult Function(_LoadingState value)? loading,
   }) {
     return initial?.call(this);
   }
@@ -488,6 +628,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_IncrementState value)? increment,
     TResult Function(_DecrementState value)? decrement,
+    TResult Function(_LoadingState value)? loading,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -578,6 +719,7 @@ class _$_IncrementState implements _IncrementState {
     required TResult Function(int count) initial,
     required TResult Function(int count) increment,
     required TResult Function(int count) decrement,
+    required TResult Function(int count) loading,
   }) {
     return increment(count);
   }
@@ -588,6 +730,7 @@ class _$_IncrementState implements _IncrementState {
     TResult Function(int count)? initial,
     TResult Function(int count)? increment,
     TResult Function(int count)? decrement,
+    TResult Function(int count)? loading,
   }) {
     return increment?.call(count);
   }
@@ -598,6 +741,7 @@ class _$_IncrementState implements _IncrementState {
     TResult Function(int count)? initial,
     TResult Function(int count)? increment,
     TResult Function(int count)? decrement,
+    TResult Function(int count)? loading,
     required TResult orElse(),
   }) {
     if (increment != null) {
@@ -612,6 +756,7 @@ class _$_IncrementState implements _IncrementState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_IncrementState value) increment,
     required TResult Function(_DecrementState value) decrement,
+    required TResult Function(_LoadingState value) loading,
   }) {
     return increment(this);
   }
@@ -622,6 +767,7 @@ class _$_IncrementState implements _IncrementState {
     TResult Function(_Initial value)? initial,
     TResult Function(_IncrementState value)? increment,
     TResult Function(_DecrementState value)? decrement,
+    TResult Function(_LoadingState value)? loading,
   }) {
     return increment?.call(this);
   }
@@ -632,6 +778,7 @@ class _$_IncrementState implements _IncrementState {
     TResult Function(_Initial value)? initial,
     TResult Function(_IncrementState value)? increment,
     TResult Function(_DecrementState value)? decrement,
+    TResult Function(_LoadingState value)? loading,
     required TResult orElse(),
   }) {
     if (increment != null) {
@@ -722,6 +869,7 @@ class _$_DecrementState implements _DecrementState {
     required TResult Function(int count) initial,
     required TResult Function(int count) increment,
     required TResult Function(int count) decrement,
+    required TResult Function(int count) loading,
   }) {
     return decrement(count);
   }
@@ -732,6 +880,7 @@ class _$_DecrementState implements _DecrementState {
     TResult Function(int count)? initial,
     TResult Function(int count)? increment,
     TResult Function(int count)? decrement,
+    TResult Function(int count)? loading,
   }) {
     return decrement?.call(count);
   }
@@ -742,6 +891,7 @@ class _$_DecrementState implements _DecrementState {
     TResult Function(int count)? initial,
     TResult Function(int count)? increment,
     TResult Function(int count)? decrement,
+    TResult Function(int count)? loading,
     required TResult orElse(),
   }) {
     if (decrement != null) {
@@ -756,6 +906,7 @@ class _$_DecrementState implements _DecrementState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_IncrementState value) increment,
     required TResult Function(_DecrementState value) decrement,
+    required TResult Function(_LoadingState value) loading,
   }) {
     return decrement(this);
   }
@@ -766,6 +917,7 @@ class _$_DecrementState implements _DecrementState {
     TResult Function(_Initial value)? initial,
     TResult Function(_IncrementState value)? increment,
     TResult Function(_DecrementState value)? decrement,
+    TResult Function(_LoadingState value)? loading,
   }) {
     return decrement?.call(this);
   }
@@ -776,6 +928,7 @@ class _$_DecrementState implements _DecrementState {
     TResult Function(_Initial value)? initial,
     TResult Function(_IncrementState value)? increment,
     TResult Function(_DecrementState value)? decrement,
+    TResult Function(_LoadingState value)? loading,
     required TResult orElse(),
   }) {
     if (decrement != null) {
@@ -793,5 +946,155 @@ abstract class _DecrementState implements CountersState {
   @override
   @JsonKey(ignore: true)
   _$$_DecrementStateCopyWith<_$_DecrementState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_LoadingStateCopyWith<$Res>
+    implements $CountersStateCopyWith<$Res> {
+  factory _$$_LoadingStateCopyWith(
+          _$_LoadingState value, $Res Function(_$_LoadingState) then) =
+      __$$_LoadingStateCopyWithImpl<$Res>;
+  @override
+  $Res call({int count});
+}
+
+/// @nodoc
+class __$$_LoadingStateCopyWithImpl<$Res>
+    extends _$CountersStateCopyWithImpl<$Res>
+    implements _$$_LoadingStateCopyWith<$Res> {
+  __$$_LoadingStateCopyWithImpl(
+      _$_LoadingState _value, $Res Function(_$_LoadingState) _then)
+      : super(_value, (v) => _then(v as _$_LoadingState));
+
+  @override
+  _$_LoadingState get _value => super._value as _$_LoadingState;
+
+  @override
+  $Res call({
+    Object? count = freezed,
+  }) {
+    return _then(_$_LoadingState(
+      count == freezed
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_LoadingState implements _LoadingState {
+  const _$_LoadingState(this.count);
+
+  @override
+  final int count;
+
+  @override
+  String toString() {
+    return 'CountersState.loading(count: $count)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_LoadingState &&
+            const DeepCollectionEquality().equals(other.count, count));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(count));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_LoadingStateCopyWith<_$_LoadingState> get copyWith =>
+      __$$_LoadingStateCopyWithImpl<_$_LoadingState>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int count) initial,
+    required TResult Function(int count) increment,
+    required TResult Function(int count) decrement,
+    required TResult Function(int count) loading,
+  }) {
+    return loading(count);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int count)? initial,
+    TResult Function(int count)? increment,
+    TResult Function(int count)? decrement,
+    TResult Function(int count)? loading,
+  }) {
+    return loading?.call(count);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int count)? initial,
+    TResult Function(int count)? increment,
+    TResult Function(int count)? decrement,
+    TResult Function(int count)? loading,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(count);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_IncrementState value) increment,
+    required TResult Function(_DecrementState value) decrement,
+    required TResult Function(_LoadingState value) loading,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_IncrementState value)? increment,
+    TResult Function(_DecrementState value)? decrement,
+    TResult Function(_LoadingState value)? loading,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_IncrementState value)? increment,
+    TResult Function(_DecrementState value)? decrement,
+    TResult Function(_LoadingState value)? loading,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingState implements CountersState {
+  const factory _LoadingState(final int count) = _$_LoadingState;
+
+  @override
+  int get count;
+  @override
+  @JsonKey(ignore: true)
+  _$$_LoadingStateCopyWith<_$_LoadingState> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: BlocProvider<CountersBloc>(
-        create: (_) => CountersBloc(),
+        create: (_) => CountersBloc()..add(const CountersEvent.loading()),
         child: const MyHomePage(),
       ),
     );
@@ -47,6 +47,7 @@ class MyHomePage extends StatelessWidget {
                 listener: (context, state) {
                   ScaffoldMessenger.of(context).clearSnackBars();
                   state.when(
+                      loading: (_) {},
                       initial: ((counts) => ScaffoldMessenger.of(context)
                           .showSnackBar(SnackBar(
                               content: Text('Counter is at initial $counts')))),
@@ -59,9 +60,10 @@ class MyHomePage extends StatelessWidget {
                                   Text('Counter is at decrement $count'))));
                 },
                 builder: (_, state) => state.when(
-                    initial: (initial) => Text(initial.toString()),
-                    increment: (increment) => Text(increment.toString()),
-                    decrement: (decrement) => Text(decrement.toString()))),
+                    loading: (_) => const CircularProgressIndicator(),
+                    initial: (count) => Text(count.toString()),
+                    increment: (count) => Text(count.toString()),
+                    decrement: (count) => Text(count.toString()))),
           ],
         ),
       ),

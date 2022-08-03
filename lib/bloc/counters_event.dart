@@ -4,5 +4,6 @@ part of 'counters_bloc.dart';
 class CountersEvent with _$CountersEvent {
   const factory CountersEvent.increment() = _IncrementEvent;
   const factory CountersEvent.decrement() = _DecrementEvent;
+  const factory CountersEvent.loading() = _LoadingEvent;
 
 }
