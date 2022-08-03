@@ -39,31 +39,11 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
+          children: const <Widget>[
+            Text(
               'You have pushed the button this many times:',
             ),
-            BlocConsumer<CountersBloc, CountersState>(
-                listener: (context, state) {
-                  ScaffoldMessenger.of(context).clearSnackBars();
-                  state.when(
-                      loading: (_) {},
-                      initial: ((counts) => ScaffoldMessenger.of(context)
-                          .showSnackBar(SnackBar(
-                              content: Text('Counter is at initial $counts')))),
-                      increment: (count) => ScaffoldMessenger.of(context)
-                          .showSnackBar(SnackBar(
-                              content: Text('Counter is at increment $count'))),
-                      decrement: (count) => ScaffoldMessenger.of(context)
-                          .showSnackBar(SnackBar(
-                              content:
-                                  Text('Counter is at decrement $count'))));
-                },
-                builder: (_, state) => state.when(
-                    loading: (_) => const CircularProgressIndicator(),
-                    initial: (count) => Text(count.toString()),
-                    increment: (count) => Text(count.toString()),
-                    decrement: (count) => Text(count.toString()))),
+            CounterValue(),
           ],
         ),
       ),
@@ -88,5 +68,42 @@ class MyHomePage extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class CounterValue extends StatelessWidget {
+  const CounterValue({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocConsumer<CountersBloc, CountersState>(
+        listener: (context, state) {
+          ScaffoldMessenger.of(context).clearSnackBars();
+          state.when(
+            loading: (_) {},
+            initial: ((counts) => ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Counter is at initial $counts'),
+                  ),
+                )),
+            increment: (count) => ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Counter is at increment $count'),
+              ),
+            ),
+            decrement: (count) => ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Counter is at decrement $count'),
+              ),
+            ),
+          );
+        },
+        builder: (_, state) => state.when(
+            loading: (_) => const CircularProgressIndicator(),
+            initial: (count) => Text(count.toString()),
+            increment: (count) => Text(count.toString()),
+            decrement: (count) => Text(count.toString())));
   }
 }
