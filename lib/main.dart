@@ -47,21 +47,21 @@ class MyHomePage extends StatelessWidget {
                 listener: (context, state) {
                   ScaffoldMessenger.of(context).clearSnackBars();
                   state.when(
-                    initial: (count) => ScaffoldMessenger.of(context)
-                        .showSnackBar(const SnackBar(content: Text('Initial'))),
-                    decrement: (count) => ScaffoldMessenger.of(context)
-                        .showSnackBar(
-                            const SnackBar(content: Text('Decrement'))),
-                    increment: (count) => ScaffoldMessenger.of(context)
-                        .showSnackBar(
-                            const SnackBar(content: Text('Increment'))),
-                  );
+                      initial: ((counts) => ScaffoldMessenger.of(context)
+                          .showSnackBar(SnackBar(
+                              content: Text('Counter is at initial $counts')))),
+                      increment: (count) => ScaffoldMessenger.of(context)
+                          .showSnackBar(SnackBar(
+                              content: Text('Counter is at increment $count'))),
+                      decrement: (count) => ScaffoldMessenger.of(context)
+                          .showSnackBar(SnackBar(
+                              content:
+                                  Text('Counter is at decrement $count'))));
                 },
-                builder: (_, state) => state.map(
-                    initial: (initial) => Text(initial.count.toString()),
-                    increment: (increment) => Text(increment.count.toString()),
-                    decrement: (decrement) =>
-                        Text(decrement.count.toString()))),
+                builder: (_, state) => state.when(
+                    initial: (initial) => Text(initial.toString()),
+                    increment: (increment) => Text(increment.toString()),
+                    decrement: (decrement) => Text(decrement.toString()))),
           ],
         ),
       ),
