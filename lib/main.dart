@@ -82,7 +82,11 @@ class CounterValue extends StatelessWidget {
         listener: (context, state) {
           ScaffoldMessenger.of(context).clearSnackBars();
           state.when(
-            loading: (_) {},
+            loading: (_) => ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Loading...'),
+              ),
+            ),
             initial: ((counts) => ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text('Counter is at initial $counts'),
