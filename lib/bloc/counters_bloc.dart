@@ -13,16 +13,5 @@ class CountersBloc extends Bloc<CountersEvent, CountersState> {
     });
     on<_DecrementEvent>(
         (event, emit) => emit(_DecrementState(state.count - 1)));
-
-    // on<CountersEvent>((event, emit) => event.when(
-    //       increment: () {
-    //         // emit(const _LoadingState(0));
-
-    //         emit(_IncrementState(state.count + 1));
-    //         return null;
-    //       },
-    //       decrement: () => emit(_DecrementState(state.count - 1)),
-    //       loading: () => emit(const _LoadingState(0)),
-    //     ));
   }
 }
