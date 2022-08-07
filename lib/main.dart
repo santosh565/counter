@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: BlocProvider<CountersBloc>(
-        create: (_) => CountersBloc()..add(const CountersEvent.loading()),
+      home: BlocProvider<CounterBloc>(
+        create: (_) => CounterBloc(),
         child: const MyHomePage(),
       ),
     );
@@ -52,7 +52,7 @@ class MyHomePage extends StatelessWidget {
         children: [
           FloatingActionButton(
             onPressed: () => context
-                .read<CountersBloc>()
+                .read<CounterBloc>()
                 .add(const CountersEvent.decrement()),
             tooltip: 'Increment',
             child: const Icon(Icons.remove),
@@ -60,7 +60,7 @@ class MyHomePage extends StatelessWidget {
           const SizedBox(width: 10),
           FloatingActionButton(
             onPressed: () => context
-                .read<CountersBloc>()
+                .read<CounterBloc>()
                 .add(const CountersEvent.increment()),
             tooltip: 'Increment',
             child: const Icon(Icons.add),
@@ -78,15 +78,10 @@ class CounterValue extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<CountersBloc, CountersState>(
+    return BlocConsumer<CounterBloc, CounterState>(
         listener: (context, state) {
           ScaffoldMessenger.of(context).clearSnackBars();
           state.when(
-            loading: (_) => ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Loading...'),
-              ),
-            ),
             initial: ((counts) => ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text('Counter is at initial $counts'),
@@ -105,7 +100,6 @@ class CounterValue extends StatelessWidget {
           );
         },
         builder: (_, state) => state.when(
-            loading: (_) => const CircularProgressIndicator(),
             initial: (count) => Text(count.toString()),
             increment: (count) => Text(count.toString()),
             decrement: (count) => Text(count.toString())));

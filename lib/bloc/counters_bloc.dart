@@ -5,9 +5,8 @@ part 'counters_bloc.freezed.dart';
 part 'counters_event.dart';
 part 'counters_state.dart';
 
-class CountersBloc extends Bloc<CountersEvent, CountersState> {
-  CountersBloc() : super(const _Initial(0)) {
-    on<_LoadingEvent>((event, emit) => emit(const _LoadingState(0)));
+class CounterBloc extends Bloc<CountersEvent, CounterState> {
+  CounterBloc() : super(const _Initial(0)) {
     on<_IncrementEvent>((event, emit) {
       emit(_IncrementState(state.count + 1));
     });
